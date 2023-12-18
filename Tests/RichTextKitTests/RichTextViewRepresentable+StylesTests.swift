@@ -14,7 +14,7 @@ import UIKit
 import AppKit
 #endif
 
-#if iOS || macOS || os(tvOS)
+#if iOS || os(visionOS) || macOS || os(tvOS)
 import RichTextKit
 import XCTest
 
@@ -72,7 +72,7 @@ final class RichTextViewComponent_StylesTests: XCTestCase {
     func testIsCurrentTextUnderlinedWorksForNoSelectedRange() {
         textView.setSelectedRange(noRange)
         textView.setCurrentRichTextStyle(.underlined, to: true)
-        #if iOS || os(tvOS)
+        #if iOS || os(visionOS) || os(tvOS)
         XCTAssertTrue(textView.currentRichTextStyles.hasStyle(.underlined))
         #endif
         textView.setSelectedRange(selectedRange)

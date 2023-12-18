@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-#if iOS || os(tvOS)
+#if iOS || os(visionOS) || os(tvOS)
 import UIKit
 
 /**

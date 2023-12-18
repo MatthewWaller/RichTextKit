@@ -102,7 +102,7 @@ private extension RichTextColorPicker {
 
     @ViewBuilder
     var picker: some View {
-        #if iOS || macOS
+        #if iOS || os(visionOS) || macOS
         ColorPicker("", selection: value)
             .fixedSize()
             .padding(.horizontal, spacing)

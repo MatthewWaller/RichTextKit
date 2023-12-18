@@ -18,7 +18,7 @@ public extension View {
      */
     @ViewBuilder
     func keyboardShortcut(for style: RichTextStyle) -> some View {
-        #if iOS || macOS
+        #if iOS || os(visionOS) || macOS
         switch style {
         case .bold: keyboardShortcut("b", modifiers: .command)
         case .italic: keyboardShortcut("i", modifiers: .command)

@@ -1,4 +1,4 @@
-#if iOS || macOS
+#if iOS || os(visionOS) || macOS
 import SwiftUI
 
 @available(*, deprecated, renamed: "init(icon:value:showIcon:quickColors:)")

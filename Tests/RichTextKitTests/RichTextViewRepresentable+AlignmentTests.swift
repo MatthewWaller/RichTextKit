@@ -14,7 +14,7 @@ import UIKit
 import AppKit
 #endif
 
-#if iOS || macOS || os(tvOS)
+#if iOS || os(visionOS) || macOS || os(tvOS)
 import RichTextKit
 import XCTest
 
@@ -62,7 +62,7 @@ final class RichTextViewComponent_AlignmentTests: XCTestCase {
         XCTAssertEqual(textView.currentTextAlignment, alignment)
         assertEqualAlignment(textView.currentRichTextAttributes[.paragraphStyle])
         assertEqualAlignment(textView.richTextAttributes(at: selectedRange)[.paragraphStyle])
-        #if iOS || os(tvOS)
+        #if iOS || os(visionOS) || os(tvOS)
         assertEqualAlignment(textView.typingAttributes[.paragraphStyle])
         #elseif os(macOS)
         assertNonEqualAlignment(textView.typingAttributes[.paragraphStyle])
@@ -75,7 +75,7 @@ final class RichTextViewComponent_AlignmentTests: XCTestCase {
         XCTAssertEqual(textView.currentTextAlignment, alignment)
         assertEqualAlignment(textView.currentRichTextAttributes[.paragraphStyle])
         assertEqualAlignment(textView.richTextAttributes(at: selectedRange)[.paragraphStyle])
-        #if iOS || os(tvOS)
+        #if iOS || os(visionOS) || os(tvOS)
         assertEqualAlignment(textView.typingAttributes[.paragraphStyle])
         #elseif os(macOS)
         assertNonEqualAlignment(textView.typingAttributes[.paragraphStyle])
@@ -88,7 +88,7 @@ final class RichTextViewComponent_AlignmentTests: XCTestCase {
         XCTAssertEqual(textView.currentTextAlignment, alignment)
         assertEqualAlignment(textView.currentRichTextAttributes[.paragraphStyle])
         assertNonEqualAlignment(textView.richTextAttributes(at: secondRowRange)[.paragraphStyle])
-        #if iOS || os(tvOS)
+        #if iOS || os(visionOS) || os(tvOS)
         assertEqualAlignment(textView.typingAttributes[.paragraphStyle])
         #elseif os(macOS)
         assertNonEqualAlignment(textView.typingAttributes[.paragraphStyle])

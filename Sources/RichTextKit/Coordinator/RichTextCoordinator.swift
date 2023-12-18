@@ -6,7 +6,7 @@
 //  Copyright © 2022-2023 Daniel Saidi. All rights reserved.
 //
 
-#if iOS || macOS || os(tvOS)
+#if iOS || os(visionOS) || macOS || os(tvOS)
 import Combine
 import SwiftUI
 
@@ -127,7 +127,7 @@ open class RichTextCoordinator: NSObject {
 }
 
 
-#if iOS || os(tvOS)
+#if iOS || os(visionOS) || os(tvOS)
 import UIKit
 
 extension RichTextCoordinator: UITextViewDelegate {}

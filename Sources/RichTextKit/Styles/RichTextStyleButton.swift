@@ -90,6 +90,23 @@ public extension RichTextStyleButton {
      */
     struct Style {
 
+        
+        #if os(visionOS)
+        /**
+         Create a rich text style button style.
+
+         - Parameters:
+           - inactiveColor: The color to apply when the button is inactive, by default `.lightText`.
+           - activeColor: The color to apply when the button is active, by default `.darkText`.
+         */
+        public init(
+            inactiveColor: Color = Color(uiColor: .lightGray),
+            activeColor: Color = .blue
+        ) {
+            self.inactiveColor = inactiveColor
+            self.activeColor = activeColor
+        }
+        #else
         /**
          Create a rich text style button style.
 
@@ -104,6 +121,7 @@ public extension RichTextStyleButton {
             self.inactiveColor = inactiveColor
             self.activeColor = activeColor
         }
+        #endif
 
         /// The color to apply when the button is inactive.
         public var inactiveColor: Color

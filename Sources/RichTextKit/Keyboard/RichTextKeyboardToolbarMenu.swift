@@ -6,7 +6,7 @@
 //  Copyright © 2022 Dnaiel Saidi. All rights reserved.
 //
 
-#if iOS
+#if iOS || os(visionOS)
 import SwiftUI
 
 /**

@@ -6,7 +6,7 @@
 //  Copyright © 2022-2023 Daniel Saidi. All rights reserved.
 //
 
-#if iOS || macOS || os(tvOS)
+#if iOS || os(visionOS) || macOS || os(tvOS)
 import SwiftUI
 
 /**
@@ -80,7 +80,7 @@ public struct RichTextEditor: ViewRepresentable {
     private var viewConfiguration: ViewConfiguration
 
 
-    #if iOS || os(tvOS)
+    #if iOS || os(visionOS) || os(tvOS)
     public let textView = RichTextView()
     #endif
 
@@ -102,7 +102,7 @@ public struct RichTextEditor: ViewRepresentable {
     }
 
 
-    #if iOS || os(tvOS)
+    #if iOS || os(visionOS) || os(tvOS)
     public func makeUIView(context: Context) -> some UIView {
         textView.setup(with: text.wrappedValue, format: format)
         viewConfiguration(textView)
